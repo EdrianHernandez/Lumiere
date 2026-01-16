@@ -1,7 +1,6 @@
 import React from 'react';
-import { Collection } from '../types';
 
-const collections: Collection[] = [
+const collections = [
   {
     id: 'c1',
     title: 'Rings',
@@ -22,7 +21,7 @@ const collections: Collection[] = [
   }
 ];
 
-const CollectionGrid: React.FC = () => {
+const CollectionGrid = () => {
   return (
     <section className="py-24 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
