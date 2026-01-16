@@ -3,16 +3,15 @@ import LuxuryHero from './components/LuxuryHero';
 import CollectionGrid from './components/CollectionGrid';
 import ProductCard from './components/ProductCard';
 import CraftsmanshipSection from './components/CraftsmanshipSection';
-import { Product } from './types';
 
 // Mock Data
-const FEATURED_PRODUCTS: Product[] = [
+const FEATURED_PRODUCTS = [
   {
     id: 'p1',
     name: 'The Ethereal Diamond Ring',
     category: 'Rings',
     price: 4500,
-    imageUrl: 'https://picsum.photos/id/111/600/750', // Vintage car placeholder used as stand-in for luxury mood
+    imageUrl: 'https://picsum.photos/id/111/600/750',
     isNew: true,
   },
   {
@@ -20,14 +19,14 @@ const FEATURED_PRODUCTS: Product[] = [
     name: 'Golden Horizon Necklace',
     category: 'Necklaces',
     price: 2800,
-    imageUrl: 'https://picsum.photos/id/146/600/750', // Architecture
+    imageUrl: 'https://picsum.photos/id/146/600/750',
   },
   {
     id: 'p3',
     name: 'Chronos Elite Watch',
     category: 'Watches',
     price: 12500,
-    imageUrl: 'https://picsum.photos/id/175/600/750', // Clock
+    imageUrl: 'https://picsum.photos/id/175/600/750',
     isNew: true,
   },
   {
@@ -35,15 +34,14 @@ const FEATURED_PRODUCTS: Product[] = [
     name: 'Sapphire Drop Earrings',
     category: 'Earrings',
     price: 3200,
-    imageUrl: 'https://picsum.photos/id/26/600/750', // Objects
+    imageUrl: 'https://picsum.photos/id/26/600/750',
   },
 ];
 
-const App: React.FC = () => {
+const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 
-  // Navbar scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -54,18 +52,14 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      
-      {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-4 text-luxury-black' : 'bg-transparent py-8 text-white'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          {/* Logo */}
           <div className="flex-1">
             <a href="#" className={`font-serif text-2xl md:text-3xl tracking-wide font-bold ${scrolled ? 'text-luxury-black' : 'text-white'}`}>
               Lumière
             </a>
           </div>
 
-          {/* Desktop Links */}
           <div className="hidden md:flex space-x-8 lg:space-x-12">
             {['Collections', 'Maison', 'Services', 'Journal'].map((item) => (
               <a 
@@ -78,7 +72,6 @@ const App: React.FC = () => {
             ))}
           </div>
 
-          {/* Icons */}
           <div className="flex-1 flex justify-end items-center space-x-6">
              <button aria-label="Search" className="hover:text-luxury-gold transition-colors">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -101,10 +94,7 @@ const App: React.FC = () => {
 
       <main className="flex-grow">
         <LuxuryHero />
-        
         <CollectionGrid />
-
-        {/* Featured Products Section */}
         <section className="py-24 px-6 md:px-12 bg-luxury-gray/30">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
@@ -116,7 +106,6 @@ const App: React.FC = () => {
                         View All Products
                     </a>
                 </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
                     {FEATURED_PRODUCTS.map((product) => (
                         <ProductCard key={product.id} product={product} />
@@ -124,11 +113,9 @@ const App: React.FC = () => {
                 </div>
             </div>
         </section>
-
         <CraftsmanshipSection />
       </main>
 
-      {/* Elegant Footer */}
       <footer className="bg-white text-luxury-black pt-20 pb-10 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -139,13 +126,11 @@ const App: React.FC = () => {
                     Designed for those who seek the exceptional.
                 </p>
                 <div className="flex space-x-4">
-                    {/* Social Placeholders */}
                     {['Instagram', 'Pinterest', 'Facebook'].map(social => (
                         <a key={social} href="#" className="text-xs uppercase tracking-widest text-gray-400 hover:text-luxury-gold transition-colors">{social}</a>
                     ))}
                 </div>
             </div>
-            
             <div>
                 <h4 className="font-bold text-xs uppercase tracking-widest mb-6">Customer Care</h4>
                 <ul className="space-y-4">
@@ -156,7 +141,6 @@ const App: React.FC = () => {
                     ))}
                 </ul>
             </div>
-
             <div>
                 <h4 className="font-bold text-xs uppercase tracking-widest mb-6">The Maison</h4>
                 <ul className="space-y-4">
@@ -168,7 +152,6 @@ const App: React.FC = () => {
                 </ul>
             </div>
           </div>
-
           <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-light">
             <p>&copy; 2024 Lumière Fine Jewelry. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
