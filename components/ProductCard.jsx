@@ -1,11 +1,6 @@
 import React from 'react';
-import { Product } from '../types';
 
-interface ProductCardProps {
-  product: Product;
-}
-
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard = ({ product }) => {
   return (
     <div className="group relative flex flex-col items-center">
       <div className="relative w-full aspect-[4/5] overflow-hidden bg-luxury-gray mb-6">
