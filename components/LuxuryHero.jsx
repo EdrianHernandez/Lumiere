@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LuxuryHero: React.FC = () => {
+const LuxuryHero = () => {
   return (
     <section className="relative w-full h-[90vh] overflow-hidden">
       {/* Background Image */}
