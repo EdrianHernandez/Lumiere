@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CraftsmanshipSection: React.FC = () => {
+const CraftsmanshipSection = () => {
   return (
     <section className="bg-luxury-black text-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16 md:gap-24">
